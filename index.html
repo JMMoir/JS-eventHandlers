@@ -9,6 +9,11 @@
   </head>
   <body>
 
+
+      <input type="button" name="P-W" value="portfolio" id = '#pButton'>
+      <input type="button" name="P-W" value="watchlist" id = '#wButton'>
+
+
     <form id='new-stock'>
       <div class="form-item">
         <label for="company">Stock Name</label>
@@ -24,12 +29,20 @@
         <label for="PricePerShare">Price/Share</label>
         <input type="number" id="PricePerShare" step="0.01">
       </div>
-      <input type="submit" value="Add to Portfolio">
+
+      <input type="submit" value="Add">
     </form>
 
-    <h1>Your Portfolio</h1>
-    <div id="displayPortfolio">
-      
+    <div id = 'displayData'>
+      <div id="displayPortfolio" style="display:none">
+        <h1>Your Portfolio</h1>
+
+      </div>
+
+      <div id="displayWatchlist" style ="display:none">
+        <h1>Your Watch List</h1>
+
+      </div>
     </div>
   </body>
 </html>
