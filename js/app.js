@@ -29,14 +29,45 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
     // add the form data to portfolio
     const investment = document.createElement('p');
-    investment.textContent = `Company:${stock} No. of shares:${amount} Price: ${price}`;
+    investment.textContent = `${stock} - ${amount} shares Price: £${price} value: £${(amount*price).toFixed(2)}`;
     listContainer.appendChild(investment);
 
+    // add pie chart using chart.js
+
+    // array of stock names
+
+    names.push(event.target.company.value)
+    holdingValue.push((event.target.amountOfShares.value * event.target.PricePerShare.value).toFixed(2))
+
+    new Chart(document.querySelector('#myChart'), {
+      type: 'doughnut',
+      data: {
+
+        labels: names,
+          datasets: [
+            {
+              backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+              data: holdingValue,
+            }
+          ]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Portfolio allocation'
+        }
+      }
+    })
 
 
   form.reset()
   }
+  // arrays for chart
+  names = [];
+  holdingValue = [];
   form.addEventListener('submit', handleFormSubmit);
+
+
 
   //////////////////////////////
 
@@ -53,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     const portfolio = document.querySelector('#displayPortfolio');
      portfolio.remove()
      location.reload(true)
+
   };
 
   // add addEventListener
@@ -90,5 +122,9 @@ document.addEventListener('DOMContentLoaded', () =>{
   };
   // event handler
   watchlistView.addEventListener('click', handleWatchlistView);
+
+
+
+
 
 })

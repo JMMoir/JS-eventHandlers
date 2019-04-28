@@ -1,0 +1,34 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: 'PT Sans', sans-serif;
+}
+
+form{
+  max-width: 500px;
+	padding: 10px 20px;
+	background: #f4f7f8;
+	margin: 10px auto;
+	padding: 20px;
+	background: #f4f7f8;
+	border-radius: 8px;
+}
+
+form label{
+  padding: 10px;
+}
+
+button {
+  background-color: crimson;
+  color: white;
+  border-radius: 30%;
+  width: 120px;
+  height: 30px;
+
+}
+
+#holdings {
+  border: solid;
+  margin: 10px;
+  box-shadow: 10px 5px 5px black;
+}
